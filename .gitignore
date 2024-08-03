@@ -38,3 +38,5 @@ out/
 
 application.properties
 index.html
+gradlew
+gradlew.bat
