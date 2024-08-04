@@ -35,3 +35,18 @@
   - `String` , `int` , `Integer` 같은 단순 타입 = `@RequestParam`
   - 나머지 = `@ModelAttribute` (argument resolver 로 지정해둔 타입 외)
     - argument resolver 로 지정해둔 타입 예 : `HttpServletResponse`
+
+### 4. HTTP 요청 메시지
+- `@RequestBody` 를 사용하면 HTTP 메시지 바디 정보를 편리하게 조회할 수 있다. 
+- 헤더 정보가 필요하다면 `HttpEntity` 나 `@RequestHeader` 사용
+  - 메시지 바디를 직접 조회하는 기능은 요청 파라미터를 조회하는 `@RequestParam` , `@ModelAttribute` 와는 전혀 관계가 없다.
+  - 요청 파라미터 vs HTTP 메시지 바디
+    - 요청 파라미터를 조회하는 기능: `@RequestParam` , `@ModelAttribute` 
+    - HTTP 메시지 바디를 직접 조회하는 기능: `@RequestBody`
+- `@ResponseBody` 를 사용하면 응답 결과를 HTTP 메시지 바디에 직접 담아서 전달할 수 있다. (view 사용x)
+
+
+- `@RequestBody` 요청
+  - JSON 요청 -> HTTP 메시지 컨버터 -> 객체
+- `@ResponseBody` 응답
+   - 객체 -> HTTP 메시지 컨버터 -> JSON 응답
